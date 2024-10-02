@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
       <Banner />
-      {/* 
       <Navbar />
+      {/* 
       <Hero />
       <LogoTicker />
       <Features />

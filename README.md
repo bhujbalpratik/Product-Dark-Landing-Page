@@ -1,6 +1,6 @@
-# Dark SaaS Landing Page Starter Template
+# Dark SaaS Landing Page 
 
-This project is a starter template for the dark theme SaaS landing page project created by Frontend Tribe.
+This project is the dark theme SaaS landing page project created by Bhujbal Pratik.
 
 This project includes elements adapted from "SaaS Website UI Kit" by Framer. Retrieved from [Source Link](https://www.figma.com/community/file/1347551304372055519) (licensed under CC BY 4.0).
 

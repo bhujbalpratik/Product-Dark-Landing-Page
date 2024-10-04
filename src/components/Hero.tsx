@@ -1,11 +1,25 @@
+"use client"
 import Link from "next/link"
 import ArrowIcon from "../assets/icons/arrow-w.svg"
 import cursorImage from "../assets/images/cursor.png"
 import messageImage from "../assets/images/message.png"
 import Image from "next/image"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
+
 export const Hero = () => {
+  const heroRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"],
+  })
+  const translateY = useTransform(scrollYProgress, [0, 1], [270, -270])
+
   return (
-    <div className="bg-black text-white py-[4.5rem] sm:py-24 bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] relative overflow-clip">
+    <div
+      ref={heroRef}
+      className="bg-black text-white py-[4.5rem] sm:py-24 bg-[linear-gradient(to_bottom,#000,#200D42_34%,#4F21A1_65%,#A46EDB_82%)] relative overflow-clip"
+    >
       <div className="absolute h-[375px] w-[750px] sm:w-[1538px] sm:h-[768px] lg:w-[2400px] lg:h-[1200px]  left-1/2 -translate-x-1/2 top-[calc(100%-96px)] sm:top-[calc(100%-110px)] bg-black rounded-[100%] border border-[#B48CDE] bg-[radial-gradient(closest-side,#000000_82%,#9560EB_100%)]"></div>
       <div className="container relative">
         <div className="flex items-center justify-center">
@@ -13,9 +27,18 @@ export const Hero = () => {
             href="#"
             className="inline-flex gap-3 border py-1 px-2 rounded-lg border-white/30"
           >
-            <span className="bg-[linear-gradient(to_right,#F87AFF,#FB93D0,#FFDD99,#C3F0B2,#2FD8FE)] text-transparent bg-clip-text [-webkit-background-clip:text]">
+            <motion.span
+              animate={{ backgroundPositionX: "-100%" }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "linear",
+              }}
+              className="bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDF)] text-transparent [background-size:200%] bg-clip-text [-webkit-background-clip:text] font-medium"
+            >
               Version 2.0 is here
-            </span>
+            </motion.span>
             <div className="inline-flex items-center justify-center gap-1">
               <span>Read More</span>
               <ArrowIcon />
@@ -28,20 +51,36 @@ export const Hero = () => {
               One Task <br />
               at a time
             </h1>
-            <Image
-              src={cursorImage}
-              height={200}
-              width={200}
-              alt="Cursor Image"
+            <motion.div
               className="absolute right-[476px] top-[108px] hidden sm:inline"
-            />
-            <Image
-              src={messageImage}
-              height={200}
-              width={200}
-              alt="Message Image"
+              drag
+              dragSnapToOrigin
+              style={{ translateY: translateY }}
+            >
+              <Image
+                src={cursorImage}
+                height={200}
+                width={200}
+                alt="Cursor Image"
+                className="max-w-none"
+                draggable={false}
+              />
+            </motion.div>
+            <motion.div
               className="absolute left-[498px] top-[56px] hidden sm:inline"
-            />
+              drag
+              dragSnapToOrigin
+              style={{ translateY: translateY }}
+            >
+              <Image
+                src={messageImage}
+                height={200}
+                width={200}
+                alt="Message Image"
+                className="max-w-none"
+                draggable={false}
+              />
+            </motion.div>
           </div>
         </div>
         <div className="flex justify-center">

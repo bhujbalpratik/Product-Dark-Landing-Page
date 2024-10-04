@@ -18,8 +18,8 @@ export default function Home() {
       <Features />
       <ProductShowcase />
       <FAQs />
-      {/* 
       <CallToAction />
+      {/* 
       <Footer /> */}
     </>
   )

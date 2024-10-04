@@ -19,8 +19,7 @@ export default function Home() {
       <ProductShowcase />
       <FAQs />
       <CallToAction />
-      {/* 
-      <Footer /> */}
+      <Footer />
     </>
   )
 }

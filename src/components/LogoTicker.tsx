@@ -19,7 +19,7 @@ const images = [
 
 export const LogoTicker = () => {
   return (
-    <div className="bg-black text-white py-[4.5rem] sm:py-24">
+    <div className="bg-black text-white py-[4.5rem] sm:py-24 overflow-x-clip">
       <div className="container">
         <h2 className="text-xl text-center text-white/70">
           Preferred by the world&apos;s most cutting-edge teams

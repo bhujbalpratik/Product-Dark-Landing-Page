@@ -69,7 +69,7 @@ const AccordionItem = ({
 
 export const FAQs = () => {
   return (
-    <div className="bg-black text-white py-[72px] sm:py-24 bg-gradient-to-b from-[#5D2CA8] to-black">
+    <div className="bg-black text-white py-[72px] sm:py-24 bg-gradient-to-b from-[#5D2CA8] to-black overflow-x-clip">
       <div className="container">
         <h2 className="font-bold text-5xl sm:text-6xl sm:max-w-[648px] mx-auto text-center tracking-tighter">
           Frequently asked questions

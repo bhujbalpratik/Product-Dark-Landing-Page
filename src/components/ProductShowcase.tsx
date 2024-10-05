@@ -11,11 +11,11 @@ export const ProductShowcase = () => {
     offset: ["start end", "end end"],
   })
 
-  const rotateZ = useTransform(scrollYProgress, [0, 1], [20, 1])
+  const rotateZ = useTransform(scrollYProgress, [0, 1], [30, 0])
   const opacity = useTransform(scrollYProgress, [0, 1], [0.1, 1])
 
   return (
-    <div className="bg-black text-white py-[4.5rem] bg-gradient-to-b from-black to-[#5D2CA8] sm:py-24">
+    <div className="bg-black text-white py-[4.5rem] bg-gradient-to-b from-black to-[#5D2CA8] sm:py-24 overflow-x-clip">
       <div className="container">
         <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
           Seamless interaction

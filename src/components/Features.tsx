@@ -65,7 +65,7 @@ const Feature = ({
 
 export const Features = () => {
   return (
-    <div className="bg-black text-white py-[4.5rem] sm:py-24">
+    <div className="bg-black text-white py-[4.5rem] sm:py-24 overflow-x-clip">
       <div className="container">
         <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
           Your all-in-one solution
@@ -77,7 +77,7 @@ export const Features = () => {
             effortlessly monitor your progress with ease and speed.
           </p>
         </div>
-        <div className="mt-16 flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col gap-4 mt-16 sm:flex-row sm:gap-5 sm:max-w-3xl lg:max-w-5xl mx-auto">
           {features.map(({ title, description }, i) => (
             <Feature title={title} description={description} key={i} />
           ))}
